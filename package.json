@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfólio de Moacir de Jesus Nascimento — HTML, CSS e JavaScript",
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "test": "node --test tests/*.test.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.48.0"
+  },
+  "license": "MIT"
+}
