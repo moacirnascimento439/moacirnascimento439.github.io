@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Moacir de Jesus Nascimento, desenvolvedor front-end: HTML, CSS e JavaScript.">
+  <title>Moacir Nascimento | Desenvolvedor Front-end</title>
+
+  <!-- Prévia bonita quando o link é compartilhado (LinkedIn, WhatsApp) -->
+  <meta property="og:title" content="Moacir Nascimento | Desenvolvedor Front-end">
+  <meta property="og:description" content="Projetos com HTML, CSS e JavaScript: sites responsivos, APIs e testes automatizados.">
+  <meta property="og:image" content="https://moacirnascimento439.github.io/img/app-clima-capa.jpg">
+  <meta property="og:url" content="https://moacirnascimento439.github.io/">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Aplica o tema salvo antes de desenhar a página (evita "piscar") -->
+  <script>
+    try {
+      const tema = localStorage.getItem("portfolio:tema");
+      if (tema) document.documentElement.dataset.theme = tema;
+    } catch {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="header">
+    <nav class="nav container" aria-label="Menu principal">
+      <a href="#inicio" class="nav__logo">Moacir<span>.dev</span></a>
+
+      <button class="nav__toggle" id="menu-toggle" aria-label="Abrir menu"
+        aria-expanded="false" aria-controls="menu">☰</button>
+
+      <ul class="nav__menu" id="menu">
+        <li><a href="#sobre" class="nav__link">Sobre</a></li>
+        <li><a href="#habilidades" class="nav__link">Habilidades</a></li>
+        <li><a href="#projetos" class="nav__link">Projetos</a></li>
+        <li><a href="#formacao" class="nav__link">Formação</a></li>
+        <li><a href="#contato" class="nav__link">Contato</a></li>
+        <li>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- ===== Início ===== -->
+    <section class="hero container" id="inicio">
+      <div class="hero__avatar" aria-hidden="true">MN</div>
+      <p class="hero__hello">Olá, eu sou</p>
+      <h1 class="hero__name">Moacir de Jesus Nascimento</h1>
+      <p class="hero__role">Desenvolvedor Front-end</p>
+      <p class="hero__text">
+        Crio sites e aplicações web responsivas com <strong>HTML, CSS e JavaScript</strong>,
+        com foco em código organizado, acessibilidade e testes.
+      </p>
+      <div class="hero__actions">
+        <a href="#projetos" class="btn btn--primary">Ver projetos</a>
+        <a href="#contato" class="btn btn--outline">Entrar em contato</a>
+      </div>
+    </section>
+
+    <!-- ===== Sobre ===== -->
+    <section class="section container" id="sobre">
+      <h2 class="section__title">Sobre mim</h2>
+      <div class="about">
+        <p>
+          Sou desenvolvedor front-end em início de carreira e estudante de
+          <strong>Análise e Desenvolvimento de Sistemas</strong> na Uniube.
+        </p>
+        <p>
+          Comecei pelos fundamentos — HTML semântico, CSS e JavaScript puro, sem frameworks —
+          para entender de verdade como a web funciona. Gosto de construir interfaces simples
+          de usar, que funcionem bem no celular e que não quebrem quando algo dá errado.
+        </p>
+        <p>
+          Estou em busca da minha primeira oportunidade como <strong>desenvolvedor júnior</strong>
+          e disponível para <strong>projetos freelance</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Habilidades ===== -->
+    <section class="section container" id="habilidades">
+      <h2 class="section__title">Habilidades</h2>
+      <ul class="skills">
+        <li class="skill"><span class="skill__icon" aria-hidden="true">🧱</span>HTML5 semântico</li>
+        <li class="skill"><span class="skill__icon" aria-hidden="true">🎨</span>CSS3 (Flexbox e Grid)</li>
+        <li class="skill"><span class="skill__icon" aria-hidden="true">⚡</span>JavaScript (ES6+)</li>
+        <li class="skill"><span class="skill__icon" aria-hidden="true">📱</span>Design responsivo</li>
+        <li class="skill"><span class="skill__icon" aria-hidden="true">🔌</span>Consumo de APIs REST</li>
+        <li class="skill"><span class="skill__icon" aria-hidden="true">♿</span>Acessibilidade web</li>
+        <li class="skill"><span class="skill__icon" aria-hidden="true">🧪</span>Testes E2E (Playwright)</li>
+        <li class="skill"><span class="skill__icon" aria-hidden="true">🌿</span>Git e GitHub</li>
+        <li class="skill"><span class="skill__icon" aria-hidden="true">⚙️</span>GitHub Actions (CI)</li>
+      </ul>
+    </section>
+
+    <!-- ===== Projetos ===== -->
+    <section class="section container" id="projetos">
+      <h2 class="section__title">Projetos</h2>
+
+      <article class="project">
+        <img class="project__image" src="img/app-clima-autocomplete.jpg"
+          alt="Tela do App de Clima mostrando sugestões de cidades enquanto o usuário digita"
+          width="1000" height="1000" loading="lazy">
+        <div class="project__body">
+          <h3 class="project__title">☁️ App de Clima</h3>
+          <p>
+            Aplicação web que mostra o clima atual e a previsão de 5 dias de qualquer cidade do mundo,
+            consumindo a API Open-Meteo.
+          </p>
+          <ul class="project__features">
+            <li>Sugestões de cidades enquanto digita, com <em>debounce</em> e <em>AbortController</em></li>
+            <li>Geolocalização, tema noturno automático e memória do último lugar</li>
+            <li>Tratamento de erros: cidade inexistente, API fora do ar e sem internet</li>
+            <li>Responsivo e acessível (navegação por teclado e leitores de tela)</li>
+            <li>18 testes automatizados rodando no GitHub Actions a cada atualização</li>
+          </ul>
+          <ul class="tags" aria-label="Tecnologias">
+            <li>HTML</li><li>CSS</li><li>JavaScript</li><li>API REST</li><li>Playwright</li>
+          </ul>
+          <div class="project__links">
+            <a class="btn btn--primary" href="https://moacirnascimento439.github.io/app-clima/"
+              target="_blank" rel="noopener noreferrer">Ver online ↗</a>
+            <a class="btn btn--outline" href="https://github.com/moacirnascimento439/app-clima"
+              target="_blank" rel="noopener noreferrer">Código ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <p class="soon">🚧 Novos projetos em desenvolvimento — em breve aqui.</p>
+    </section>
+
+    <!-- ===== Formação ===== -->
+    <section class="section container" id="formacao">
+      <h2 class="section__title">Formação</h2>
+      <div class="education">
+        <span class="education__icon" aria-hidden="true">🎓</span>
+        <div>
+          <h3 class="education__course">Tecnólogo em Análise e Desenvolvimento de Sistemas</h3>
+          <p class="education__school">Uniube — Universidade de Uberaba</p>
+          <p class="education__date">Ago/2026 – Dez/2028 · em andamento</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contato ===== -->
+    <section class="section container" id="contato">
+      <h2 class="section__title">Contato</h2>
+      <p class="contact__text">
+        Tem um projeto ou uma vaga? Vamos conversar!
+      </p>
+      <div class="contact">
+        <a class="contact__item" href="mailto:moacirnascimento1999@gmail.com">
+          <span aria-hidden="true">✉️</span> moacirnascimento1999@gmail.com
+        </a>
+        <a class="contact__item" href="https://www.linkedin.com/in/moacir-nascimento2003/"
+          target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">💼</span> LinkedIn
+        </a>
+        <a class="contact__item" href="https://github.com/moacirnascimento439"
+          target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">💻</span> GitHub
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="ano">2026</span> Moacir de Jesus Nascimento · Feito com HTML, CSS e JavaScript</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
